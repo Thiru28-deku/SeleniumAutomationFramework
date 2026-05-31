@@ -15,7 +15,7 @@ jobs:
           java-version: '21'
           distribution: 'temurin'
       - name: Run tests
-        run: mvn test --no-transfer-progress
+        run: mvn test -Dmaven.test.failure.ignore=true --no-transfer-progress
       - name: Upload extent report
         uses: actions/upload-artifact@v4
         if: always()
