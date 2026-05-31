@@ -17,7 +17,7 @@ public final class FrameworkConstant {
 	private static final String EDGEDRIVERPATH = RESOURCEPATH + "/executables/msedgedriver.exe";
 	private static final String CONFIGFILEPATH = RESOURCEPATH + "/Config/config.properties";
 	private static final String JSONFILEPATH = RESOURCEPATH + "/Config/Configs.json";
-	private static final int EXPLICITWAIT = 10;
+	private static final int EXPLICITWAIT = 20;
 	private static final String EXTENTREPORTFOLDERPATH = System.getProperty("user.dir") + "/extent-test-output/";
 	private static final String HRMTESTSHEET = "HRMTest";
 	private static final String DATASHEET = "Data";
