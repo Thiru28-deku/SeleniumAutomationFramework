@@ -13,7 +13,8 @@ import com.tsd.enums.WaitStrategy;
 public final class OrangeHRMHomePage extends BasePage {
 
 
-	private final By drpDownUserName = By.xpath("//header/div[1]/div[3]/ul/li/span/i");
+	private final By drpDownUserName =
+	        By.cssSelector("span.oxd-userdropdown-tab");
 	private final By linkLogout = By.xpath("//a[text()='Logout' and @role='menuitem']");
 
 	public OrangeHRMHomePage clickDropDownicon() {
