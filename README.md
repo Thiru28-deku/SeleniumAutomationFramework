@@ -1,7 +1,6 @@
 # Selenium Automation Framework
 
-A scalable, data-driven test automation framework built with Java 21, 
-Selenium 4, and TestNG.
+A scalable, data-driven test automation framework built with Java 21, Selenium 4, and TestNG.
 
 ## Tech Stack
 - Java 21
@@ -14,33 +13,35 @@ Selenium 4, and TestNG.
 - WebDriverManager
 - AssertJ
 
-## Project Structuresrc/
-├── main/java/com/tsd/
-│   ├── annotations/     # @FrameworkAnnotation
-│   ├── driver/          # Driver, DriverManager, DriverFactory
-│   ├── enums/           # WaitStrategy, CategoryType, ConfigProperties
-│   ├── factory/         # ExplicitWaitFactory
-│   ├── listeners/       # ListenerClass, MethodInterceptor, AnnotationTransformer
-│   ├── pages/           # BasePage, page objects
-│   ├── reports/         # ExtentLogger, ExtentManager
-│   └── utils/           # ConfigUtils, ScreenshotUtils
-├── main/resources/
-│   ├── config.properties
-│   └── log4j2.xml
-└── test/java/com/tsd/test/
-└── OrangeHRMTests.jav## How to Run
+## Project Structure
 
-```bash
-# Run full suite
-mvn test
+    src/
+    ├── main/java/com/tsd/
+    │   ├── annotation/      # @FrameworkAnnotation
+    │   ├── constant/        # FrameworkConstant
+    │   ├── driver/          # Driver, DriverManager
+    │   ├── enums/           # WaitStrategy, CategoryType, ConfigProperties
+    │   ├── factory/         # DriverFactory, ExplicitWaitFactory
+    │   ├── listeners/       # ListenerClass, MethodInterceptor, AnnotationTransformer
+    │   ├── pages/           # BasePage, page objects
+    │   ├── reports/         # ExtentLogger, ExtentManager, ExtentReport
+    │   └── utils/           # ConfigUtils, ScreenshotUtils, ExcelUtils, JsonUtils
+    ├── main/resources/
+    │   └── log4j2.xml
+    └── test/java/com/tsd/test/
+        └── OrangeHRMTests.java
 
-# Run specific category
-mvn test -Dcategories=SANITY
+## How to Run
 
-# Run on specific browser
-mvn test -Dbrowser=chrome
-```
+    # Run full suite
+    mvn test
+
+    # Run specific category
+    mvn test -Dcategories=SANITY
+
+    # Run on specific browser
+    mvn test -Dbrowser=chrome
 
 ## Reports
-After execution, open `extent-output/index.html` in a browser to view 
+After execution, open extent-test-output/index.html in a browser to view
 the test report with screenshots on failure.
