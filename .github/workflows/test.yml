@@ -15,10 +15,10 @@ jobs:
           java-version: '21'
           distribution: 'temurin'
       - name: Run tests
-        run: cd SeleniumAutomationFramework && mvn test --no-transfer-progress
+        run: mvn test --no-transfer-progress
       - name: Upload extent report
         uses: actions/upload-artifact@v4
         if: always()
         with:
           name: extent-report
-          path: SeleniumAutomationFramework/extent-test-output/
+          path: extent-test-output/
