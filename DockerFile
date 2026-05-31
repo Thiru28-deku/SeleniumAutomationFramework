@@ -1,0 +1,16 @@
+FROM maven:3.9.9-eclipse-temurin-21
+
+# Install Chrome
+RUN apt-get update && apt-get install -y \
+    wget curl unzip gnupg && \
+    wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | apt-key add - && \
+    echo "deb http://dl.google.com/linux/chrome/deb/ stable main" \
+    > /etc/apt/sources.list.d/google-chrome.list && \
+    apt-get update && \
+    apt-get install -y google-chrome-stable
+
+WORKDIR /app
+COPY . .
+
+# Run TestNG suite
+CMD ["mvn", "test", "-DsuiteXmlFile=testng.xml"]
