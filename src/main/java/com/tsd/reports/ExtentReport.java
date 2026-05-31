@@ -37,7 +37,6 @@ public final class ExtentReport {
 		}
 
 		ExtentManager.unload();
-		Desktop.getDesktop().browse(new File(FrameworkConstant.getExtentReportPath()).toURI());
 		
 		if (!GraphicsEnvironment.isHeadless()
 	            && Desktop.isDesktopSupported()) {
