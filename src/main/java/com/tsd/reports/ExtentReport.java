@@ -1,6 +1,7 @@
 package com.tsd.reports;
 
 import java.awt.Desktop;
+import java.awt.GraphicsEnvironment;
 import java.io.File;
 import java.util.Objects;
 
@@ -37,6 +38,13 @@ public final class ExtentReport {
 
 		ExtentManager.unload();
 		Desktop.getDesktop().browse(new File(FrameworkConstant.getExtentReportPath()).toURI());
+		
+		if (!GraphicsEnvironment.isHeadless()
+	            && Desktop.isDesktopSupported()) {
+
+	        Desktop.getDesktop()
+	               .browse(new File(FrameworkConstant.getExtentReportPath()).toURI());
+	    }
 
 	}
 
